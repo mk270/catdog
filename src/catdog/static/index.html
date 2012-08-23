@@ -52,6 +52,13 @@
                         <li><a tabindex="-1" href="/campaign/new">Add ...</a></li>
                       </ul>
                     </li>
+                    <li class="dropdown">
+                      <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Report <b class="caret"></b></a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="/campaign/new">Add ...</a></li>
+                      </ul>
+                    </li>
                   </ul>
             </ul>
           </div><!--/.nav-collapse -->
@@ -60,6 +67,13 @@
     </div>
 
     <div class="container">
+
+	  {{ #campaign_detail }}
+	  Campaign: {{ name }}
+	  <br /><a href="/recipients/{{ camp_id }}">Recipients</a>
+	  <br /><a href="/template/{{ camp_id }}">Template</a>
+	  {{ /campaign_detail }}
+
 
 	  {{ #recipient_list }}
 	  Recipients:
