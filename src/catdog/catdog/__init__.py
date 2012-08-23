@@ -13,15 +13,14 @@
 # preview
 # dispatch
 
-import sqlite3
-
 from flask import Flask
 
 
 from flask.ext.sqlalchemy import SQLAlchemy
 
+db_name = 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres:///mk_blog'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres:///%s' % db_name
 db = SQLAlchemy(app)
 
 import routes
