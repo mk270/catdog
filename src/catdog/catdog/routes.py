@@ -37,6 +37,10 @@ def campaign_detail(camp_id):
             "campaign": campaigns()
             })
 
+@app.route('/send/<camp_id>', methods=['POST'])
+def send_email(camp_id):
+    return "Oops"
+
 @app.route('/')
 def hello_world():
     return render({ "home_page": True, "campaign": campaigns() })

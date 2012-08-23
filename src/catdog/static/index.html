@@ -69,9 +69,14 @@
     <div class="container">
 
 	  {{ #campaign_detail }}
-	  Campaign: {{ name }}
+		Campaign: {{ name }}
 	  <br /><a href="/recipients/{{ camp_id }}">Recipients</a>
 	  <br /><a href="/template/{{ camp_id }}">Template</a>
+
+	  <form action="/send/{{ camp_id }}" method="POST">
+		<button class="btn submit">Send email</button>
+	  </form>
+
 	  {{ /campaign_detail }}
 
 
