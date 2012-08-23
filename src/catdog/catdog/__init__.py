@@ -18,7 +18,7 @@ from flask import Flask
 
 from flask.ext.sqlalchemy import SQLAlchemy
 
-db_name = 
+db_name = "mk_blog"
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres:///%s' % db_name
 db = SQLAlchemy(app)
