@@ -39,12 +39,20 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">CatDog</a>
+          <a class="brand" href="/">CatDog</a>
           <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Campaign</a></li>
-              <li><a href="#report">Report</a></li>
-              <li><a href="#template">Template</a></li>
+			  <ul class="nav" role="navigation">
+                    <li class="dropdown">
+                      <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Campaign <b class="caret"></b></a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+						{{ #campaign }}
+                        <li><a tabindex="-1" href="/campaign/{{ camp_id }}">{{ name }}</a></li>
+						{{ /campaign }}
+                        <li class="divider"></li>
+                        <li><a tabindex="-1" href="/campaign/new">Add ...</a></li>
+                      </ul>
+                    </li>
+                  </ul>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -53,13 +61,7 @@
 
     <div class="container">
 
-	  Campaigns:
-      <ul>
-	  {{ #campaign }}
-	    <li>{{ name }} <a href="/recipients/{{ camp_id }}">Link</a></li>
-	  {{ /campaign }}
-	  </ul>
-
+	  {{ #recipient_list }}
 	  Recipients:
 	  <table class="table table-striped table-bordered">
 		{{ #recipient }}
@@ -70,7 +72,7 @@
 		</tr>
 		{{ /recipient }}
 	  </table>
-
+	  {{ /recipient_list }}
     </div> <!-- /container -->
 
     <!-- Le javascript
